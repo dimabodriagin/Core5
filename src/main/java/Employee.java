@@ -25,4 +25,20 @@ public class Employee {
                 "', country='" + this.country +
                 "', age=" + this.age + "}";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Employee employee = (Employee) o;
+        return this.id == employee.id &&
+                this.firstName.equals(employee.firstName) &&
+                this.lastName.equals(employee.lastName) &&
+                this.country.equals(employee.country) &&
+                this.age == employee.age;
+    }
 } //Employee{id=1, firstName='John', lastName='Smith', country='USA', age=25}
